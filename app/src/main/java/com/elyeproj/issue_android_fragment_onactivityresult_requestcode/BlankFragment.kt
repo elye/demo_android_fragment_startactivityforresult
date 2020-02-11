@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_blank.*
 class BlankFragment : Fragment() {
 
     companion object {
-        const val REQUEST_CODE = 0xFF
+        const val REQUEST_CODE = 0x88
     }
 
     override fun onCreateView(
@@ -29,12 +29,12 @@ class BlankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_activity_start.setOnClickListener {
+        btn_fragment_start.setOnClickListener {
             Log.d("Track", "BlankFragment: startActivityForResult")
             startActivityForResult(Intent(context, TargetActivity::class.java), REQUEST_CODE)
         }
 
-        btn_fragment_start.setOnClickListener {
+        btn_activity_start.setOnClickListener {
             Log.d("Track", "BlankFragment: activity?.startActivityForResult")
             activity?.startActivityForResult(Intent(context, TargetActivity::class.java), REQUEST_CODE)
         }
